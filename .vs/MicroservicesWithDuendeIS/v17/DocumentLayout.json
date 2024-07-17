@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|solutionrelative:movies.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|solutionrelative:movies.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|solutionrelative:movies.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.api\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|solutionrelative:movies.api\\controllers\\moviescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Movies.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Movies.API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T12:18:29.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Program.cs",
+              "RelativeDocumentMoniker": "Movies.API\\Program.cs",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Program.cs",
+              "RelativeToolTip": "Movies.API\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T12:16:07.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Movies.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\appsettings.json",
+              "RelativeToolTip": "Movies.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-16T12:15:32.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MoviesController.cs",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Controllers\\MoviesController.cs",
+              "RelativeDocumentMoniker": "Movies.API\\Controllers\\MoviesController.cs",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Controllers\\MoviesController.cs",
+              "RelativeToolTip": "Movies.API\\Controllers\\MoviesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T11:48:56.458Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
