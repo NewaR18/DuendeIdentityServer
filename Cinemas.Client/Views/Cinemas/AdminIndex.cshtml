@@ -1,0 +1,28 @@
+﻿@model UserInfoViewModel
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Claim
+            </th>
+            <th>
+                Value
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.UserInfoDictionary)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Key)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+            </tr>
+        }
+        
+    </tbody>
+    
+</table>

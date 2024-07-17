@@ -1,0 +1,16 @@
+﻿@using Cinemas.Client.Models.Enumerators
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@* <script src="~/lib/others/toastr.min.js"></script> *@
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>  
+@if (TempData[nameof(Status.Success)] != null)
+{  
+    <script>
+        toastr.success('@TempData[nameof(Status.Success)]')
+    </script>
+}
+@if (TempData[nameof(Status.Error)] != null)
+{
+    <script>
+        toastr.error('@TempData[nameof(Status.Error)]')
+    </script>
+}
