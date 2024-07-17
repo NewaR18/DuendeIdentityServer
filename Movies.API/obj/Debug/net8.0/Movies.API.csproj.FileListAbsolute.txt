@@ -137,3 +137,4 @@ C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.API\obj\De
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.API\obj\Debug\net8.0\Movies.API.pdb
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.API\obj\Debug\net8.0\Movies.API.genruntimeconfig.cache
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.API\obj\Debug\net8.0\ref\Movies.API.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.API\obj\Debug\net8.0\Movies.API.sourcelink.json
