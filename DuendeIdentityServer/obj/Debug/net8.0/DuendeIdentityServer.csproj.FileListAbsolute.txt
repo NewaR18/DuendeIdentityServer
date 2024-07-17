@@ -39,3 +39,6 @@ C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentitySer
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.pdb
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.genruntimeconfig.cache
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\ref\DuendeIdentityServer.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.RazorAssemblyInfo.cache
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.RazorAssemblyInfo.cs
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\keys\is-signing-key-7388F3CF3A7BC4A3C0A80CCDF3B9D894.json

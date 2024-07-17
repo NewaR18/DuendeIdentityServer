@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd3d3df65e61be096208471be43f8d0e9762a288")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0a288687bdd1f97b890257acf1cfe4cbe1d6f79")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

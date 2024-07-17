@@ -48,11 +48,11 @@ namespace IdentityServer
                     AllowRememberConsent = false,
                     RedirectUris = new List<string>()
                     {
-                        "https://localhost:5002/signin-oidc"
+                        "https://localhost:7002/signin-oidc"
                     },
                     PostLogoutRedirectUris = new List<string>()
                     {
-                        "https://localhost:5002/signout-callback-oidc"
+                        "https://localhost:7002/signout-callback-oidc"
                     },
                     ClientSecrets = new List<Secret>()
                     {
@@ -75,11 +75,11 @@ namespace IdentityServer
                     AllowAccessTokensViaBrowser = true, //Needed if you are trying to access access_token too, not needed in case of id_token
                     RedirectUris = new List<string>()
                     {
-                        "https://localhost:5003/signin-oidc"
+                        "https://localhost:7003/signin-oidc"
                     },
                     PostLogoutRedirectUris = new List<string>()
                     {
-                        "https://localhost:5003/signout-callback-oidc"
+                        "https://localhost:7003/signout-callback-oidc"
                     },
                     ClientSecrets = new List<Secret>()
                     {
