@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\utilities\\databaseutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\utilities\\databaseutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\tempkey.jwk||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\tempkey.jwk||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\duendeidentityserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\duendeidentityserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\duendeidentityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\duendeidentityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\cinemas.client\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|solutionrelative:cinemas.client\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -19,20 +43,12 @@
       "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\duendeidentityserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\duendeidentityserver.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\cinemas.client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|solutionrelative:cinemas.client\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\cinemas.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|solutionrelative:cinemas.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\cinemas.client\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,24 +63,12 @@
       "RelativeMoniker": "D:0:0:{A30F27DA-A87D-47D4-955C-518DBEA4B6C9}|Cinemas.Client\\Cinemas.Client.csproj|solutionrelative:cinemas.client\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\duendeidentityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\duendeidentityserver.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{082BAA3E-A746-494C-9A94-CF2C32A7AEED}|Movies.Client\\Movies.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.client\\movies.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{082BAA3E-A746-494C-9A94-CF2C32A7AEED}|Movies.Client\\Movies.Client.csproj|solutionrelative:movies.client\\movies.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{082BAA3E-A746-494C-9A94-CF2C32A7AEED}|Movies.Client\\Movies.Client.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{082BAA3E-A746-494C-9A94-CF2C32A7AEED}|Movies.Client\\Movies.Client.csproj|solutionrelative:movies.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\duendeidentityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F48DDA42-178C-40B2-AA56-B8C3347F856D}|DuendeIdentityServer\\DuendeIdentityServer.csproj|solutionrelative:duendeidentityserver\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0508B094-DE63-4EA0-AD57-0CD54D7C0E6F}|Movies.API\\Movies.API.csproj|c:\\users\\sudip.shrestha\\source\\repos\\microserviceswithduendeis\\movies.api\\movies.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -122,7 +126,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,41 +138,54 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "tempkey.jwk",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\tempkey.jwk",
+              "RelativeDocumentMoniker": "DuendeIdentityServer\\tempkey.jwk",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\tempkey.jwk",
+              "RelativeToolTip": "DuendeIdentityServer\\tempkey.jwk",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-07-18T07:15:06.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Movies.Client\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Movies.Client\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-17T12:18:14.659Z",
+              "Title": "DatabaseUtility.cs",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Utilities\\DatabaseUtility.cs",
+              "RelativeDocumentMoniker": "DuendeIdentityServer\\Utilities\\DatabaseUtility.cs",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Utilities\\DatabaseUtility.cs",
+              "RelativeToolTip": "DuendeIdentityServer\\Utilities\\DatabaseUtility.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T07:12:29.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Cinemas.Client\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Cinemas.Client\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAsAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-17T12:17:36.701Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Program.cs",
+              "RelativeDocumentMoniker": "DuendeIdentityServer\\Program.cs",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Program.cs*",
+              "RelativeToolTip": "DuendeIdentityServer\\Program.cs*",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAYwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T06:47:40.14Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADUAAAAAAAAAAAAmwFAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T12:12:24.589Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\appsettings.json",
+              "RelativeDocumentMoniker": "DuendeIdentityServer\\appsettings.json",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\appsettings.json",
+              "RelativeToolTip": "DuendeIdentityServer\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-17T06:49:22.94Z",
               "EditorCaption": ""
             },
             {
@@ -185,59 +202,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Properties\\launchSettings.json",
               "RelativeToolTip": "DuendeIdentityServer\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAfAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBJwBUAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-17T06:42:02.003Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Cinemas.Client\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADUAAAAAAAAAAAAmwFAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-17T12:12:24.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Cinemas.Client\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Cinemas.Client\\Properties\\launchSettings.json",
+              "ViewState": "AQIAABUAAAAAAAAAAIBJwAsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-17T12:17:36.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DuendeIdentityServer.csproj",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\DuendeIdentityServer.csproj",
+              "RelativeDocumentMoniker": "DuendeIdentityServer\\DuendeIdentityServer.csproj",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\DuendeIdentityServer.csproj",
+              "RelativeToolTip": "DuendeIdentityServer\\DuendeIdentityServer.csproj",
+              "ViewState": "AQIAAAkAAAAAsD3ksmLgvxQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-17T06:43:18.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Movies.Client\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Movies.Client\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBJwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-17T12:18:14.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Movies.API\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Properties\\launchSettings.json",
               "RelativeToolTip": "Movies.API\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAACYAAAAFAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAIBJwCYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-16T12:18:29.449Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\appsettings.json",
               "RelativeDocumentMoniker": "Cinemas.Client\\appsettings.json",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\appsettings.json",
               "RelativeToolTip": "Cinemas.Client\\appsettings.json",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAIBJwAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-17T12:12:40.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Program.cs",
-              "RelativeDocumentMoniker": "Cinemas.Client\\Program.cs",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Program.cs",
-              "RelativeToolTip": "Cinemas.Client\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T12:13:16.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Cinemas.Client\\Views\\_ViewImports.cshtml",
@@ -250,20 +306,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Config.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Config.cs",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Config.cs",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Config.cs",
               "RelativeToolTip": "DuendeIdentityServer\\Config.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAAAMwAAABKAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAABBwMwAAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-17T06:43:21.795Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "AdminIndex.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Views\\Cinemas\\AdminIndex.cshtml",
               "RelativeDocumentMoniker": "Cinemas.Client\\Views\\Cinemas\\AdminIndex.cshtml",
@@ -276,20 +332,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Movies.Client.csproj",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Movies.Client.csproj",
               "RelativeDocumentMoniker": "Movies.Client\\Movies.Client.csproj",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Movies.Client.csproj",
               "RelativeToolTip": "Movies.Client\\Movies.Client.csproj",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwBMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-07-17T11:43:15.341Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "LoginOptions.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Login\\LoginOptions.cs",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Login\\LoginOptions.cs",
@@ -297,11 +353,12 @@
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Login\\LoginOptions.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T11:10:13.974Z"
+              "WhenOpened": "2024-07-17T11:10:13.974Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Movies.API.csproj",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Movies.API.csproj",
               "RelativeDocumentMoniker": "Movies.API\\Movies.API.csproj",
@@ -314,32 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\appsettings.json",
-              "RelativeDocumentMoniker": "DuendeIdentityServer\\appsettings.json",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\appsettings.json",
-              "RelativeToolTip": "DuendeIdentityServer\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-17T06:49:22.94Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DuendeIdentityServer.csproj",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\DuendeIdentityServer.csproj",
-              "RelativeDocumentMoniker": "DuendeIdentityServer\\DuendeIdentityServer.csproj",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\DuendeIdentityServer.csproj",
-              "RelativeToolTip": "DuendeIdentityServer\\DuendeIdentityServer.csproj",
-              "ViewState": "AQIAAAkAAAAAsD3ksmLgvwoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-17T06:43:18.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "LoggedOut.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOut.cshtml",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOut.cshtml",
@@ -347,35 +379,25 @@
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOut.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T11:10:24.555Z"
+              "WhenOpened": "2024-07-17T11:10:24.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Program.cs",
               "RelativeDocumentMoniker": "Movies.Client\\Program.cs",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Program.cs",
               "RelativeToolTip": "Movies.Client\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACMAAAAyAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAABBwCMAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T11:41:55.966Z"
+              "WhenOpened": "2024-07-17T11:41:55.966Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Program.cs",
-              "RelativeDocumentMoniker": "DuendeIdentityServer\\Program.cs",
-              "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Program.cs",
-              "RelativeToolTip": "DuendeIdentityServer\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T06:47:40.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "LoggedOutViewModel.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOutViewModel.cs",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOutViewModel.cs",
@@ -383,11 +405,12 @@
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Logout\\LoggedOutViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T11:10:26.545Z"
+              "WhenOpened": "2024-07-17T11:10:26.545Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "LogoutOptions.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Logout\\LogoutOptions.cs",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Logout\\LogoutOptions.cs",
@@ -395,23 +418,25 @@
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Logout\\LogoutOptions.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T11:10:27.992Z"
+              "WhenOpened": "2024-07-17T11:10:27.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "_ScopeListItem.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Ciba\\_ScopeListItem.cshtml",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Ciba\\_ScopeListItem.cshtml",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Ciba\\_ScopeListItem.cshtml",
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Ciba\\_ScopeListItem.cshtml",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAABBwAkAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T11:10:37.8Z"
+              "WhenOpened": "2024-07-17T11:10:37.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\appsettings.json",
               "RelativeDocumentMoniker": "Movies.API\\appsettings.json",
@@ -419,23 +444,25 @@
               "RelativeToolTip": "Movies.API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-16T12:15:32.409Z"
+              "WhenOpened": "2024-07-16T12:15:32.409Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Login\\Index.cshtml",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Login\\Index.cshtml",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Login\\Index.cshtml",
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Login\\Index.cshtml",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAABEAAAAtAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAABBwBEAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T07:31:20.75Z"
+              "WhenOpened": "2024-07-17T07:31:20.75Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Program.cs",
               "RelativeDocumentMoniker": "Movies.API\\Program.cs",
@@ -443,23 +470,25 @@
               "RelativeToolTip": "Movies.API\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T12:16:07.016Z"
+              "WhenOpened": "2024-07-16T12:16:07.016Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Create\\Index.cshtml",
               "RelativeDocumentMoniker": "DuendeIdentityServer\\Pages\\Account\\Create\\Index.cshtml",
               "ToolTip": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\DuendeIdentityServer\\Pages\\Account\\Create\\Index.cshtml",
               "RelativeToolTip": "DuendeIdentityServer\\Pages\\Account\\Create\\Index.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAABBwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-17T07:31:15.623Z"
+              "WhenOpened": "2024-07-17T07:31:15.623Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IdentityController.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Controllers\\IdentityController.cs",
               "RelativeDocumentMoniker": "Movies.API\\Controllers\\IdentityController.cs",
@@ -467,11 +496,12 @@
               "RelativeToolTip": "Movies.API\\Controllers\\IdentityController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-17T07:02:20.359Z"
+              "WhenOpened": "2024-07-17T07:02:20.359Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "MoviesController.cs",
               "DocumentMoniker": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.API\\Controllers\\MoviesController.cs",
               "RelativeDocumentMoniker": "Movies.API\\Controllers\\MoviesController.cs",
@@ -479,7 +509,8 @@
               "RelativeToolTip": "Movies.API\\Controllers\\MoviesController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T11:48:56.458Z"
+              "WhenOpened": "2024-07-16T11:48:56.458Z",
+              "EditorCaption": ""
             }
           ]
         }
