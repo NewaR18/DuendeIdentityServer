@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e7bc8b8c39c48d417660ebec6893a605227f596")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d34ee1651f7cb6e14ba398c2d1c9d74cf4c6de1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DuendeIdentityServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

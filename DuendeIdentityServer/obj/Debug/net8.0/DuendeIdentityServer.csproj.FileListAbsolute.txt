@@ -41,7 +41,6 @@ C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentitySer
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\ref\DuendeIdentityServer.dll
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.RazorAssemblyInfo.cache
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.RazorAssemblyInfo.cs
-C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\keys\is-signing-key-7388F3CF3A7BC4A3C0A80CCDF3B9D894.json
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Duende.IdentityServer.EntityFramework.dll
@@ -142,3 +141,17 @@ C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentitySer
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Duende.IdentityServer.AspNetIdentity.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\MailKit.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\MimeKit.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\System.Formats.Asn1.dll
