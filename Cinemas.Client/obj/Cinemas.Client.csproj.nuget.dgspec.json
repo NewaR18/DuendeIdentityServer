@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Cinemas.Client.csproj": {}
+    "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Cinemas.Client\\Cinemas.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Cinemas.Client.csproj": {
+    "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Cinemas.Client\\Cinemas.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Cinemas.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Cinemas.Client\\Cinemas.Client.csproj",
         "projectName": "Cinemas.Client",
-        "projectPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\Cinemas.Client.csproj",
-        "packagesPath": "C:\\Users\\sudip.shrestha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Cinemas.Client\\obj\\",
+        "projectPath": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Cinemas.Client\\Cinemas.Client.csproj",
+        "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Cinemas.Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sudip.shrestha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

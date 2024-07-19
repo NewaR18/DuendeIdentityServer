@@ -5,7 +5,7 @@ using IdentityModel;
 using System.Security.Claims;
 using System.Security.Cryptography;
 
-namespace IdentityServer
+namespace DuendeIdentityServer
 {
     public class Config
     {

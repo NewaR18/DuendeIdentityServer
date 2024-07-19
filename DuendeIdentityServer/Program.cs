@@ -1,13 +1,29 @@
-using IdentityServer;
-using IdentityServer.Utilities;
-using IdentityServerHost;
+using DuendeIdentityServer;
+using DuendeIdentityServer.Models;
+using DuendeIdentityServer.Utilities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using DuendeIdentityServer.Data;
+using System;
+using Duende.IdentityServer.Test;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using DuendeIdentityServer.Utilities.EmailConfigurations;
+using DuendeIdentityServer.Utilities.BuildModel;
+using DuendeIdentityServer.Models.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+var connString = builder.Configuration.GetConnectionString("IdentityConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connString));
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddDefaultTokenProviders()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddSingleton<IEmailSender, EmailSender>();
+builder.Services.AddScoped<CustomModelBuilder>();
+builder.Services.Configure<MailDetailsViewModel>(builder.Configuration.GetSection("mailDetails"));
+#region In-Memory Setup  --Commented
 //builder.Services.AddIdentityServer()
 //                    .AddInMemoryClients(Config.Clients)
 //                    .AddInMemoryIdentityResources(Config.IdentityResources)
@@ -15,8 +31,8 @@ builder.Services.AddRazorPages();
 //                    .AddInMemoryApiScopes(Config.ApiScopes)
 //                    .AddTestUsers(Config.TestUsers)
 //                    .AddDeveloperSigningCredential();
+#endregion
 var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
-var connString = builder.Configuration.GetConnectionString("IdentityConnection");
 
 builder.Services.AddIdentityServer()
     .AddConfigurationStore(options =>
@@ -29,7 +45,7 @@ builder.Services.AddIdentityServer()
         options.ConfigureDbContext = b => b.UseSqlServer(connString,
             sql => sql.MigrationsAssembly(migrationsAssembly));
     })
-    .AddTestUsers(Config.TestUsers);
+    .AddAspNetIdentity<ApplicationUser>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
