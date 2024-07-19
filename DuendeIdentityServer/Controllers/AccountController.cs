@@ -465,20 +465,7 @@ namespace DuendeIdentityServer.Controllers
                     $"override the register page in /Areas/AccountManager/Account/Register.cshtml");
             }
         }
-        /*public async Task<IActionResult> Logout()
-        {
-            try
-            {
-                await _signInManager.SignOutAsync();
-                TempData["success"] = "User logged out successully";
-                return RedirectToAction(nameof(HomeController.Index), "Home", new { area = "Bills" });
-            }
-            catch
-            {
-
-                throw;
-            }
-        }
+        /*
         public IActionResult ForgetPassword()
         {
             return View();
