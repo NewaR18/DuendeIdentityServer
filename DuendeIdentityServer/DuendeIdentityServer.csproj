@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Account\**" />
+    <Content Remove="Pages\Account\**" />
+    <EmbeddedResource Remove="Pages\Account\**" />
+    <None Remove="Pages\Account\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.5" />
     <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="7.0.5" />
     <PackageReference Include="MailKit" Version="4.7.1.1" />

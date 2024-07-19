@@ -6,34 +6,208 @@ using System.Security.Claims;
 using System.Text.Encodings.Web;
 using System.Text;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using IdentityServer.Models;
-using IdentityServer.Models.ViewModels;
+using Duende.IdentityServer.Events;
+using Duende.IdentityServer.Models;
+using Duende.IdentityServer;
+using Microsoft.VisualBasic;
+using DuendeIdentityServer.Models.InputModel;
+using DuendeIdentityServer.Utilities.BuildModel;
+using DuendeIdentityServer.Models.ViewModels;
+using Duende.IdentityServer.Services;
+using Duende.IdentityServer.Stores;
+using Microsoft.AspNetCore.Authentication;
+using DuendeIdentityServer.Models.Options;
+using DuendeIdentityServer.Utilities;
+using Duende.IdentityServer.Extensions;
+using IdentityModel;
+using DuendeIdentityServer.Models;
 
-namespace IdentityServer.Controllers
+namespace DuendeIdentityServer.Controllers
 {
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly CustomModelBuilder _customModelBuilder;
+        private readonly IIdentityServerInteractionService _interaction;
+        private readonly IAuthenticationSchemeProvider _schemeProvider;
+        private readonly IClientStore _clientStore;
+        private readonly IEventService _events;
         private readonly IEmailSender _emailSender;
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        private readonly UrlEncoder _urlEncoder;
-        private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
-        //private readonly IUnitOfWork _repo;
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender,
-            IWebHostEnvironment webHostEnvironment,
-            UrlEncoder urlEncoder
+            CustomModelBuilder customModelBuilder,
+            IIdentityServerInteractionService interaction,
+            IAuthenticationSchemeProvider schemeProvider,
+            IEventService events,
+            IClientStore clientStore,
+            IEmailSender emailSender
             )
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _customModelBuilder = customModelBuilder;
+            _interaction = interaction;
+            _schemeProvider = schemeProvider;
+            _clientStore = clientStore;
+            _events = events;
             _emailSender = emailSender;
-            _webHostEnvironment = webHostEnvironment;
-            _urlEncoder = urlEncoder;
-            //_repo = repo;
+        }
+        public async Task<IActionResult> Login(string? returnUrl)
+        {
+            LoginViewModel loginViewModel = await _customModelBuilder.BuildLoginViewModelAsync(returnUrl);
+
+            if (loginViewModel.IsExternalLoginOnly)
+            {
+                // we only have one option for logging in and it's an external provider
+                return RedirectToAction("Challenge", "External", new { scheme = loginViewModel.ExternalLoginScheme, returnUrl });
+            }
+            return View(loginViewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginInputModel model, string button)
+        {
+            var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+
+            // the user clicked the "cancel" button
+            if (button != "login")
+            {
+                if (context != null)
+                {
+                    // if the user cancels, send a result back into IdentityServer as if they 
+                    // denied the consent (even if this client does not require consent).
+                    // this will send back an access denied OIDC error response to the client.
+                    await _interaction.DenyAuthorizationAsync(context, AuthorizationError.AccessDenied);
+
+                    // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                    if (context.IsNativeClient())
+                    {
+                        // The client is native, so this change in how to
+                        // return the response is for better UX for the end user.
+                        return this.LoadingPage("Redirect", model.ReturnUrl);
+                    }
+
+                    return Redirect(model.ReturnUrl);
+                }
+                else
+                {
+                    // since we don't have a valid context, then we just go back to the home page
+                    return Redirect("~/");
+                }
+            }
+
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberLogin, lockoutOnFailure: true);
+                if (result.Succeeded)
+                {
+                    var user = await _userManager.FindByNameAsync(model.Username);
+                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id, user.UserName, clientId: context?.Client.ClientId));
+
+                    if (context != null)
+                    {
+                        if (context.IsNativeClient())
+                        {
+                            // The client is native, so this change in how to
+                            // return the response is for better UX for the end user.
+                            return this.LoadingPage("Redirect", model.ReturnUrl);
+                        }
+
+                        // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                        return Redirect(model.ReturnUrl);
+                    }
+
+                    // request for a local page
+                    if (Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    else if (string.IsNullOrEmpty(model.ReturnUrl))
+                    {
+                        return Redirect("~/");
+                    }
+                    else
+                    {
+                        // user might have clicked on a malicious link - should be logged
+                        throw new Exception("invalid return URL");
+                    }
+                }
+
+                await _events.RaiseAsync(new UserLoginFailureEvent(model.Username, "invalid credentials", clientId: context?.Client.ClientId));
+                ModelState.AddModelError(string.Empty, AccountOptions.InvalidCredentialsErrorMessage);
+            }
+
+            // something went wrong, show form with error
+            LoginViewModel loginViewModel = await _customModelBuilder.BuildLoginViewModelAsync(model);
+            return View(loginViewModel);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Logout(string logoutId)
+        {
+            // build a model so the logout page knows what to display
+            bool? isAuthenticated = User?.Identity.IsAuthenticated;
+
+
+            var logoutViewModel = await _customModelBuilder.BuildLogoutViewModelAsync(logoutId, isAuthenticated);
+
+            if (logoutViewModel.ShowLogoutPrompt == false)
+            {
+                // if the request for logout was properly authenticated from IdentityServer, then
+                // we don't need to show the prompt and can just log the user out directly.
+                return await Logout(logoutViewModel);
+            }
+
+            return View(logoutViewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout(LogoutInputModel model)
+        {
+            var loggedOutViewModel = await _customModelBuilder.BuildLoggedOutViewModelAsync(model.LogoutId);
+            if (User?.Identity.IsAuthenticated == true)
+            {
+                var idp = User.FindFirst(JwtClaimTypes.IdentityProvider)?.Value;
+                if (idp != null && idp != IdentityServerConstants.LocalIdentityProvider)
+                {
+                    var providerSupportsSignout = await HttpContext.GetSchemeSupportsSignOutAsync(idp);
+                    if (providerSupportsSignout)
+                    {
+                        if (loggedOutViewModel.LogoutId == null)
+                        {
+                            // if there's no current logout context, we need to create one
+                            // this captures necessary info from the current logged in user
+                            // before we signout and redirect away to the external IdP for signout
+                            loggedOutViewModel.LogoutId = await _interaction.CreateLogoutContextAsync();
+                        }
+
+                        loggedOutViewModel.ExternalAuthenticationScheme = idp;
+                    }
+                }
+            }
+            if (User?.Identity.IsAuthenticated == true)
+            {
+                // delete local authentication cookie
+                await _signInManager.SignOutAsync();
+
+                // raise the logout event
+                await _events.RaiseAsync(new UserLogoutSuccessEvent(User.GetSubjectId(), User.GetDisplayName()));
+            }
+
+            // check if we need to trigger sign-out at an upstream identity provider
+            if (loggedOutViewModel.TriggerExternalSignout)
+            {
+                // build a return URL so the upstream provider will redirect back
+                // to us after the user has logged out. this allows us to then
+                // complete our single sign-out processing.
+                string url = Url.Action("Logout", new { logoutId = loggedOutViewModel.LogoutId });
+
+                // this triggers a redirect to the external provider for sign-out
+                return SignOut(new AuthenticationProperties { RedirectUri = url }, loggedOutViewModel.ExternalAuthenticationScheme);
+            }
+
+            return View("LoggedOut", loggedOutViewModel);
         }
         /*public IActionResult LockOut()
         {
@@ -96,13 +270,15 @@ namespace IdentityServer.Controllers
                 throw;
             }
         }*/
-        public async Task<IActionResult> Register()
+        public async Task<IActionResult> Register(string? returnUrl)
         {
+            LoginViewModel loginViewModel = await _customModelBuilder.BuildLoginViewModelAsync(returnUrl);
             try
             {
                 RegisterModel registerModel = new()
                 {
                     Input = new RegisterInputModel(),
+                    ReturnUrl = string.IsNullOrEmpty(returnUrl)?"": returnUrl,
                     ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList()
                 };
                 return View(registerModel);
@@ -117,10 +293,11 @@ namespace IdentityServer.Controllers
         {
             try
             {
+                var context = await _interaction.GetAuthorizationContextAsync(registerModel.ReturnUrl);
                 if (ModelState.IsValid)
                 {
                     var user = CreateUser();
-                    user.UserName = registerModel.Input.Email;
+                    user.UserName = registerModel.Input.Username;
                     user.Email = registerModel.Input.Email;
                     user.PhoneNumber = registerModel.Input.PhoneNumber;
                     user.Name = registerModel.Input.Name;
@@ -143,13 +320,38 @@ namespace IdentityServer.Controllers
                         }
                         if (_userManager.Options.SignIn.RequireConfirmedAccount)
                         {
-                            return RedirectToAction(nameof(RegisterConfirmation), new { email = registerModel.Input.Email });
+                            return RedirectToAction(nameof(RegisterConfirmation), new { email = registerModel.Input.Email, redirectURL = registerModel.ReturnUrl});
                         }
                         else
                         {
                             await _signInManager.SignInAsync(user, isPersistent: true);
-                            TempData["success"] = "User Signed In Successdully";
-                            return RedirectToAction("Index", "Account", new { area = "Bills" });
+                            await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id, user.UserName, clientId: context?.Client.ClientId));
+                            if (context != null)
+                            {
+                                if (context.IsNativeClient())
+                                {
+                                    // The client is native, so this change in how to
+                                    // return the response is for better UX for the end user.
+                                    return this.LoadingPage("Redirect", registerModel.ReturnUrl);
+                                }
+
+                                // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                                return Redirect(registerModel.ReturnUrl);
+                            }
+                            // request for a local page
+                            if (Url.IsLocalUrl(registerModel.ReturnUrl))
+                            {
+                                return Redirect(registerModel.ReturnUrl);
+                            }
+                            else if (string.IsNullOrEmpty(registerModel.ReturnUrl))
+                            {
+                                return Redirect("~/");
+                            }
+                            else
+                            {
+                                // user might have clicked on a malicious link - should be logged
+                                throw new Exception("invalid return URL");
+                            }
                         }
                     }
                     foreach (var error in result.Errors)
@@ -165,7 +367,7 @@ namespace IdentityServer.Controllers
                 throw;
             }
         }
-        public async Task<IActionResult> RegisterConfirmation(string email)
+        public async Task<IActionResult> RegisterConfirmation(string email, string redirectURL)
         {
             try
             {
@@ -179,11 +381,11 @@ namespace IdentityServer.Controllers
                 var EmailConfirmationUrl = Url.Action(
                                         "ConfirmEmail",
                                         "Account",
-                                        new { area = "AccountManager", userId = userId, code = code },
+                                        new { userId = userId, code = code, redirectURL = redirectURL },
                                         Request.Scheme
                                         );
-                //await _emailSender.SendEmailAsync(email, "Confirm your email",
-                //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(EmailConfirmationUrl)}'>clicking here</a>.");
+                await _emailSender.SendEmailAsync(email, "Confirm your email",
+                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(EmailConfirmationUrl)}'>clicking here</a>.");
                 return View();
             }
             catch
@@ -191,10 +393,11 @@ namespace IdentityServer.Controllers
                 throw;
             }
         }
-        public async Task<IActionResult> ConfirmEmail(string userId, string code)
+        public async Task<IActionResult> ConfirmEmail(string userId, string code, string redirectURL)
         {
             try
             {
+                var context = await _interaction.GetAuthorizationContextAsync(redirectURL);
                 if (userId == null || code == null)
                 {
                     TempData["error"] = "Email could not be verified";
@@ -216,7 +419,33 @@ namespace IdentityServer.Controllers
                     TempData["error"] = "Email Confirmation failure";
                 }
                 await _signInManager.SignInAsync(user, isPersistent: true);
-                return RedirectToAction("Index", "Account", new { area = "Bills" });
+                await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id, user.UserName, clientId: context?.Client.ClientId));
+                if (context != null)
+                {
+                    if (context.IsNativeClient())
+                    {
+                        // The client is native, so this change in how to
+                        // return the response is for better UX for the end user.
+                        return this.LoadingPage("Redirect", redirectURL);
+                    }
+
+                    // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                    return Redirect(redirectURL);
+                }
+                // request for a local page
+                if (Url.IsLocalUrl(redirectURL))
+                {
+                    return Redirect(redirectURL);
+                }
+                else if (string.IsNullOrEmpty(redirectURL))
+                {
+                    return Redirect("~/");
+                }
+                else
+                {
+                    // user might have clicked on a malicious link - should be logged
+                    throw new Exception("invalid return URL");
+                }
             }
             catch
             {

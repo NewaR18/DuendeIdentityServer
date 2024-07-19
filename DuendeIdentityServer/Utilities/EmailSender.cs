@@ -1,5 +1,5 @@
 ﻿
-using IdentityServer.Models.ViewModels;
+using DuendeIdentityServer.Models.ViewModels;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
 using MimeKit;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdentityServer.Utilities.EmailConfigurations
+namespace DuendeIdentityServer.Utilities.EmailConfigurations
 {
     public class EmailSender : IEmailSender
     {

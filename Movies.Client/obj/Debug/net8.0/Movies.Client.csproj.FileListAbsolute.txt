@@ -40,3 +40,45 @@ C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.Client\obj
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.Client\obj\Debug\net8.0\Movies.Client.pdb
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.Client\obj\Debug\net8.0\Movies.Client.genruntimeconfig.cache
 C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\Movies.Client\obj\Debug\net8.0\ref\Movies.Client.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\appsettings.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.staticwebassets.runtime.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.exe
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.deps.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.runtimeconfig.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Movies.Client.pdb
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\IdentityModel.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.csproj.AssemblyReference.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.AssemblyInfoInputs.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.AssemblyInfo.cs
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.csproj.CoreCompileInputs.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.RazorAssemblyInfo.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.RazorAssemblyInfo.cs
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.sourcelink.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets\msbuild.Movies.Client.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets\msbuild.build.Movies.Client.props
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Movies.Client.props
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Movies.Client.props
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\scopedcss\bundle\Movies.Client.styles.css
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\scopedcss\projectbundle\Movies.Client.bundle.scp.css
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.C.9E7370B2.Up2Date
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\refint\Movies.Client.dll
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.pdb
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\Movies.Client.genruntimeconfig.cache
+C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\Movies.Client\obj\Debug\net8.0\ref\Movies.Client.dll

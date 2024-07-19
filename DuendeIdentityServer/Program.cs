@@ -1,13 +1,15 @@
-using IdentityServer;
-using IdentityServer.Models;
-using IdentityServer.Utilities;
+using DuendeIdentityServer;
+using DuendeIdentityServer.Models;
+using DuendeIdentityServer.Utilities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using DuendeIdentityServer.Data;
 using System;
 using Duende.IdentityServer.Test;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using IdentityServer.Utilities.EmailConfigurations;
+using DuendeIdentityServer.Utilities.EmailConfigurations;
+using DuendeIdentityServer.Utilities.BuildModel;
+using DuendeIdentityServer.Models.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true).AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddSingleton<IEmailSender, EmailSender>();
+builder.Services.AddScoped<CustomModelBuilder>();
+builder.Services.Configure<MailDetailsViewModel>(builder.Configuration.GetSection("mailDetails"));
 #region In-Memory Setup  --Commented
 //builder.Services.AddIdentityServer()
 //                    .AddInMemoryClients(Config.Clients)

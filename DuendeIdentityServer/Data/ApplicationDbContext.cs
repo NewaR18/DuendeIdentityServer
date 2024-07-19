@@ -1,4 +1,4 @@
-﻿using IdentityServer.Models;
+﻿using DuendeIdentityServer.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 

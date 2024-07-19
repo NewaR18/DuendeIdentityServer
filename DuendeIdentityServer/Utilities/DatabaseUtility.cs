@@ -2,7 +2,7 @@
 using Duende.IdentityServer.EntityFramework.Mappers;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServer.Utilities
+namespace DuendeIdentityServer.Utilities
 {
     public static class DatabaseUtility
     {

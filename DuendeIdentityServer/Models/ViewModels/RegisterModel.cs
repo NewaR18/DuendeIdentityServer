@@ -11,17 +11,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace IdentityServer.Models.ViewModels
+namespace DuendeIdentityServer.Models.ViewModels
 {
     public class RegisterModel
     {
         [BindProperty]
         public RegisterInputModel Input { get; set; }
+        public string ReturnUrl { get; set; }
         [ValidateNever]
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
     }
     public class RegisterInputModel
     {
+        [Required]
+        [Display(Name = "Username")]
+        [StringLength(20, MinimumLength = 3)]
+        public string Username { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

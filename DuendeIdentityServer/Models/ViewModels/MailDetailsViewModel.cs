@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IdentityServer.Models.ViewModels
+namespace DuendeIdentityServer.Models.ViewModels
 {
     public class MailDetailsViewModel
     {
