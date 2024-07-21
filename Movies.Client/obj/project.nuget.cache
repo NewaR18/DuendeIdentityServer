@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "WCXMDjtn9Eg=",
+  "dgSpecHash": "FvdPvp0G4Aw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Movies.Client\\Movies.Client.csproj",
+  "projectFilePath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Movies.Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nitro\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\8.0.3\\microsoft.aspnetcore.authentication.openidconnect.8.0.3.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.logging\\7.1.2\\microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
-    "C:\\Users\\Nitro\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\identitymodel\\6.2.0\\identitymodel.6.2.0.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\8.0.3\\microsoft.aspnetcore.authentication.openidconnect.8.0.3.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.logging\\7.1.2\\microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
   ],
   "logs": []
 }

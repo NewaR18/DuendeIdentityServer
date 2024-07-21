@@ -357,19 +357,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nitro\\.nuget\\packages\\": {}
+    "C:\\Users\\sudip.shrestha\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Movies.Client\\Movies.Client.csproj",
+      "projectUniqueName": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Movies.Client.csproj",
       "projectName": "Movies.Client",
-      "projectPath": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Movies.Client\\Movies.Client.csproj",
-      "packagesPath": "C:\\Users\\Nitro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nitro\\source\\repos\\Dueende Identity Server\\DuendeIdentityServer\\Movies.Client\\obj\\",
+      "projectPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\Movies.Client.csproj",
+      "packagesPath": "C:\\Users\\sudip.shrestha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sudip.shrestha\\source\\repos\\MicroservicesWithDuendeIS\\Movies.Client\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Nitro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sudip.shrestha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -429,7 +434,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
