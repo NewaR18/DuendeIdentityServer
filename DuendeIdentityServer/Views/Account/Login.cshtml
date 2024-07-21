@@ -41,6 +41,9 @@
                                     </div>
                                 </div>
                             }
+                            <div class="form-group">
+                                <a asp-controller="Account" asp-action="ForgetPassword" asp-route-redirectURL="@Model.ReturnUrl" class="mt-1" style="color:#61AFFE">Forgot your Password?</a>
+                            </div>
                             <button class="btn btn-primary" name="button" value="login">Login</button>
                             <button class="btn btn-secondary" name="button" value="cancel">Cancel</button>
                         </form>

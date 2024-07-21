@@ -463,10 +463,15 @@ namespace DuendeIdentityServer.Controllers
                     $"override the register page in /Areas/AccountManager/Account/Register.cshtml");
             }
         }
-        
-        public IActionResult ForgetPassword()
+        [HttpGet]
+        public IActionResult ForgetPassword(string redirectURL)
         {
-            return View();
+            ForgetPasswordViewModel forgetPasswordViewModel = new ForgetPasswordViewModel()
+            {
+                Email = "",
+                ReturnUrl = redirectURL
+            };
+            return View(forgetPasswordViewModel);
         }
         [HttpPost]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel forgetPassword)
@@ -486,7 +491,7 @@ namespace DuendeIdentityServer.Controllers
                     var EmailConfirmationUrl = Url.Action(
                                         "ResetPassword",
                                         "Account",
-                                        new { code = code, email = forgetPassword.Email },
+                                        new { code = code, email = forgetPassword.Email, returnURL = forgetPassword.ReturnUrl },
                                         Request.Scheme
                                         );
                     await _emailSender.SendEmailAsync(
@@ -502,12 +507,13 @@ namespace DuendeIdentityServer.Controllers
                 throw;
             }
         }
-        /*
+        
         public IActionResult ForgetPasswordConfirmation()
         {
             return View();
         }
-        public IActionResult ResetPassword(string code = null, string email = null)
+        
+        public IActionResult ResetPassword(string code = null, string email = null, string returnURL = null)
         {
             if (code == null || email == null)
             {
@@ -516,14 +522,15 @@ namespace DuendeIdentityServer.Controllers
             }
             else
             {
-                ResetPasswordModel model = new ResetPasswordModel();
+                ResetPasswordViewModel model = new ResetPasswordViewModel();
                 model.Code = code;
                 model.Email = email;
+                model.ReturnUrl = string.IsNullOrEmpty(returnURL) ? "": returnURL;
                 return View(model);
             }
         }
         [HttpPost]
-        public async Task<IActionResult> ResetPassword(ResetPasswordModel model)
+        public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
         {
             try
             {
@@ -540,7 +547,34 @@ namespace DuendeIdentityServer.Controllers
                 var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction(nameof(ResetPasswordConfirmation));
+                    var context = await _interaction.GetAuthorizationContextAsync(model.ReturnUrl);
+                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.UserName, user.Id, user.UserName, clientId: context?.Client.ClientId));
+                    if (context != null)
+                    {
+                        if (context.IsNativeClient())
+                        {
+                            // The client is native, so this change in how to
+                            // return the response is for better UX for the end user.
+                            return this.LoadingPage("Redirect", model.ReturnUrl);
+                        }
+
+                        // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                        return Redirect(model.ReturnUrl);
+                    }
+                    // request for a local page
+                    if (Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    else if (string.IsNullOrEmpty(model.ReturnUrl))
+                    {
+                        return Redirect("~/");
+                    }
+                    else
+                    {
+                        return RedirectToAction(nameof(ResetPasswordConfirmation));
+                    }
+                    
                 }
                 foreach (var error in result.Errors)
                 {
@@ -557,7 +591,7 @@ namespace DuendeIdentityServer.Controllers
         {
             return View();
         }
-
+        /*
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
             try
