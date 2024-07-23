@@ -11,6 +11,7 @@
           "Duende.IdentityServer.AspNetIdentity": "7.0.5",
           "Duende.IdentityServer.EntityFramework": "7.0.5",
           "MailKit": "4.7.1.1",
+          "Microsoft.AspNetCore.Authentication.Google": "8.0.7",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
           "Microsoft.AspNetCore.Identity.UI": "8.0.7",
           "Microsoft.EntityFrameworkCore": "8.0.7",
@@ -148,6 +149,14 @@
           "lib/net8.0/MailKit.dll": {
             "assemblyVersion": "4.7.0.0",
             "fileVersion": "4.7.1.1"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/8.0.7": {
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "8.0.7.0",
+            "fileVersion": "8.0.724.31402"
           }
         }
       },
@@ -1149,6 +1158,13 @@
       "sha512": "sha512-Y3okmIxu8g/ZcoJiE2i+dCeKgnNyddsXmcJslZnCPGVPP0aRyeVINHV1h97V+OVMdqjQI6O12J2p8Duwq5UEqQ==",
       "path": "mailkit/4.7.1.1",
       "hashPath": "mailkit.4.7.1.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.Google/8.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ToVB95+oz8gE6E8Y3ziXsNsDimWkmbYo1EKkLmcjmpbIbydY9wccdepD/d32yYFz7HoIJo+RA6EPppB4BOZgfA==",
+      "path": "microsoft.aspnetcore.authentication.google/8.0.7",
+      "hashPath": "microsoft.aspnetcore.authentication.google.8.0.7.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.OpenIdConnect/8.0.3": {
       "type": "package",

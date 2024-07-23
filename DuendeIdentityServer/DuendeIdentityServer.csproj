@@ -4,19 +4,25 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>5c81e13a-86f1-4391-a4d3-53ec8b430901</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="Pages\Account\**" />
+    <Compile Remove="Pages\ExternalLogin\**" />
     <Content Remove="Pages\Account\**" />
+    <Content Remove="Pages\ExternalLogin\**" />
     <EmbeddedResource Remove="Pages\Account\**" />
+    <EmbeddedResource Remove="Pages\ExternalLogin\**" />
     <None Remove="Pages\Account\**" />
+    <None Remove="Pages\ExternalLogin\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.5" />
     <PackageReference Include="Duende.IdentityServer.EntityFramework" Version="7.0.5" />
     <PackageReference Include="MailKit" Version="4.7.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />

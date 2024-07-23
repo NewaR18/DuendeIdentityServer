@@ -208,67 +208,6 @@ namespace DuendeIdentityServer.Controllers
 
             return View("LoggedOut", loggedOutViewModel);
         }
-        /*public IActionResult LockOut()
-        {
-            return View();
-        }*/
-        /*public async Task<IActionResult> LoginWith2fa(bool rememberMe)
-        {
-            try
-            {
-                var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-                if (user == null)
-                {
-                    TempData["error"] = "Unable to load two-factor authentication user.";
-                    return RedirectToAction(nameof(Login));
-                }
-                LoginWith2faModel loginWith2FaModel = new LoginWith2faModel()
-                {
-                    RememberMe = rememberMe
-                };
-                return View(loginWith2FaModel);
-            }
-            catch
-            {
-                throw;
-            }
-        }
-        [HttpPost]
-        public async Task<IActionResult> LoginWith2fa(LoginWith2faModel loginWith2FaModel)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-                var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-                if (user == null)
-                {
-                    throw new InvalidOperationException($"Unable to load two-factor authentication user.");
-                }
-                var authenticatorCode = loginWith2FaModel.Input.TwoFactorCode.Replace(" ", string.Empty).Replace("-", string.Empty);
-                var result = await _signInManager.TwoFactorAuthenticatorSignInAsync(authenticatorCode, loginWith2FaModel.RememberMe, loginWith2FaModel.Input.RememberMachine);
-                if (result.Succeeded)
-                {
-                    TempData["success"] = "Logged In Successfully";
-                    return RedirectToAction(nameof(HomeController.Index), "Home", new { area = "Bills" });
-                }
-                else if (result.IsLockedOut)
-                {
-                    return RedirectToAction("Lockout");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Invalid authenticator code.");
-                    return View();
-                }
-            }
-            catch
-            {
-                throw;
-            }
-        }*/
         public async Task<IActionResult> Register(string? returnUrl)
         {
             try
@@ -591,24 +530,26 @@ namespace DuendeIdentityServer.Controllers
         {
             return View();
         }
-        /*
-        public IActionResult ExternalLogin(string provider, string returnUrl = null)
+        
+        public IActionResult ExternalLogin(string scheme, string returnUrl = null)
         {
             try
             {
-                var redirectUrl = Url.Action("Callback", "Account", new { area = "AccountManager" });
-                var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
-                return new ChallengeResult(provider, properties);
+                var redirectUrl = Url.Action("Callback", "Account", new {redirectUrl = returnUrl });
+                var properties = _signInManager.ConfigureExternalAuthenticationProperties(scheme, redirectUrl);
+                return new ChallengeResult(scheme, properties);
             }
             catch
             {
                 throw;
             }
         }
-        public async Task<IActionResult> Callback(string remoteError = null)
+
+        public async Task<IActionResult> Callback(string redirectUrl, string remoteError = null)
         {
             try
             {
+                var context = await _interaction.GetAuthorizationContextAsync(redirectUrl);
                 if (remoteError != null)
                 {
                     TempData["error"] = $"Error from external provider: {remoteError}";
@@ -624,7 +565,31 @@ namespace DuendeIdentityServer.Controllers
                 if (result.Succeeded)
                 {
                     TempData["success"] = "Logged In using Google";
-                    return RedirectToAction(nameof(HomeController.Index), "Home", new { area = "Bills" });
+                    if (context != null)
+                    {
+                        if (context.IsNativeClient())
+                        {
+                            // The client is native, so this change in how to
+                            // return the response is for better UX for the end user.
+                            return this.LoadingPage("Redirect", redirectUrl);
+                        }
+
+                        // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                        return Redirect(redirectUrl);
+                    }
+                    // request for a local page
+                    if (Url.IsLocalUrl(redirectUrl))
+                    {
+                        return Redirect(redirectUrl);
+                    }
+                    else if (string.IsNullOrEmpty(redirectUrl))
+                    {
+                        return Redirect("~/");
+                    }
+                    else
+                    {
+                        return RedirectToAction(nameof(ResetPasswordConfirmation));
+                    }
                 }
                 if (result.IsLockedOut)
                 {
@@ -632,8 +597,9 @@ namespace DuendeIdentityServer.Controllers
                 }
                 else
                 {
-                    ExternalLoginModel externalLoginModel = new ExternalLoginModel();
+                    ExternalLoginViewModel externalLoginModel = new ExternalLoginViewModel();
                     externalLoginModel.ProviderDisplayName = info.ProviderDisplayName;
+                    externalLoginModel.ReturnUrl = redirectUrl;
                     if (info.Principal.HasClaim(c => c.Type == ClaimTypes.Email))
                     {
                         externalLoginModel.Input = new ExternalLoginInput
@@ -650,6 +616,75 @@ namespace DuendeIdentityServer.Controllers
                 throw;
             }
         }
+        public async Task<IActionResult> ConfirmationExternalAuthentication(ExternalLoginViewModel externalLoginModel)
+        {
+            try
+            {
+                var context = await _interaction.GetAuthorizationContextAsync(externalLoginModel.ReturnUrl);
+                var info = await _signInManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    TempData["error"] = "Error loading external login information during confirmation.";
+                    return RedirectToAction(nameof(Login));
+                }
+
+                if (ModelState.IsValid)
+                {
+                    var user = CreateUser();
+                    user.UserName = externalLoginModel.Input.Email;
+                    user.Email = externalLoginModel.Input.Email;
+                    TextInfo ti = CultureInfo.CurrentCulture.TextInfo;
+                    user.Name = ti.ToTitleCase(externalLoginModel.Input.Name);
+                    var result = await _userManager.CreateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        result = await _userManager.AddLoginAsync(user, info);
+                        if (result.Succeeded)
+                        {
+                            ApplicationUser _identityuser = _userManager.Users.Where(s => s.Email == externalLoginModel.Input.Email).FirstOrDefault();
+                            _identityuser.EmailConfirmed = true;
+                            await _userManager.UpdateAsync(_identityuser);
+                            await _signInManager.SignInAsync(user, isPersistent: false, info.LoginProvider);
+                            if (context != null)
+                            {
+                                if (context.IsNativeClient())
+                                {
+                                    // The client is native, so this change in how to
+                                    // return the response is for better UX for the end user.
+                                    return this.LoadingPage("Redirect", externalLoginModel.ReturnUrl);
+                                }
+
+                                // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
+                                return Redirect(externalLoginModel.ReturnUrl);
+                            }
+                            // request for a local page
+                            if (Url.IsLocalUrl(externalLoginModel.ReturnUrl))
+                            {
+                                return Redirect(externalLoginModel.ReturnUrl);
+                            }
+                            else if (string.IsNullOrEmpty(externalLoginModel.ReturnUrl))
+                            {
+                                return Redirect("~/");
+                            }
+                            else
+                            {
+                                return RedirectToAction(nameof(ResetPasswordConfirmation));
+                            }
+                        }
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+                return View(nameof(ExternalLogin), externalLoginModel);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        /*
         public async Task<IActionResult> ConfirmationExternalAuthentication(ExternalLoginModel externalLoginModel)
         {
             try
@@ -692,8 +727,8 @@ namespace DuendeIdentityServer.Controllers
             {
                 throw;
             }
-        }*/
-        /*
+        }
+        
                 #region Profile
                 public async Task<IActionResult> Profile()
                 {
@@ -853,506 +888,7 @@ namespace DuendeIdentityServer.Controllers
                         throw;
                     }
                 }
-                [HttpPost]
-                public async Task<IActionResult> ChangePassword(ChangePasswordModel changePassword)
-                {
-                    try
-                    {
-                        if (!ModelState.IsValid)
-                        {
-                            return View();
-                        }
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to change password";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var changePasswordResult = await _userManager.ChangePasswordAsync(user, changePassword.OldPassword, changePassword.NewPassword);
-                        if (!changePasswordResult.Succeeded)
-                        {
-                            foreach (var error in changePasswordResult.Errors)
-                            {
-                                ModelState.AddModelError(string.Empty, error.Description);
-                            }
-                            return View();
-                        }
-                        await _signInManager.RefreshSignInAsync(user);
-                        TempData["success"] = "Your Password has been changed";
-                        return RedirectToAction(nameof(Profile));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> TwoFactorAuthentication()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to access Two Factor Authentication";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        TwoFactorAuthenticationModel twoFactorAuthenticationModel = new TwoFactorAuthenticationModel()
-                        {
-                            HasAuthenticator = await _userManager.GetAuthenticatorKeyAsync(user) != null,
-                            Is2faEnabled = await _userManager.GetTwoFactorEnabledAsync(user),
-                            IsMachineRemembered = await _signInManager.IsTwoFactorClientRememberedAsync(user),
-                            RecoveryCodesLeft = await _userManager.CountRecoveryCodesAsync(user)
-                        };
-                        return View(twoFactorAuthenticationModel);
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                [HttpPost]
-                public async Task<IActionResult> TwoFactorAuthentication(TwoFactorAuthenticationModel twoFactorAuthenticationModel)
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to access Two Factor Authentication";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        await _signInManager.ForgetTwoFactorClientAsync();
-                        TempData["success"] = "The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code.";
-                        return RedirectToAction(nameof(Profile));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> EnableAuthenticator()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to enable Authenticator";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        EnableAuthenticatorModel enableAuthenticator = await LoadSharedKeyAndQrCodeUriAsync(user);
-                        return View(enableAuthenticator);
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                [HttpPost]
-                public async Task<IActionResult> EnableAuthenticator(EnableAuthenticatorModel enableAuthenticator)
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to enable Authenticator";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        if (!ModelState.IsValid)
-                        {
-                            EnableAuthenticatorModel enableAuthenticatorReset = await LoadSharedKeyAndQrCodeUriAsync(user);
-                            return View(enableAuthenticator);
-                        }
-
-                        // Strip spaces and hyphens
-                        var verificationCode = enableAuthenticator.Input.Code.Replace(" ", string.Empty).Replace("-", string.Empty);
-
-                        var is2faTokenValid = await _userManager.VerifyTwoFactorTokenAsync(
-                            user, _userManager.Options.Tokens.AuthenticatorTokenProvider, verificationCode);
-
-                        if (!is2faTokenValid)
-                        {
-                            ModelState.AddModelError("Input.Code", "Verification code is invalid.");
-                            EnableAuthenticatorModel enableAuthenticatorReset = await LoadSharedKeyAndQrCodeUriAsync(user);
-                            return View(enableAuthenticatorReset);
-                        }
-
-                        await _userManager.SetTwoFactorEnabledAsync(user, true);
-
-                        TempData["success"] = "Your authenticator app has been verified.";
-
-                        if (await _userManager.CountRecoveryCodesAsync(user) == 0)
-                        {
-                            var recoveryCodes = await _userManager.GenerateNewTwoFactorRecoveryCodesAsync(user, 10);
-                            enableAuthenticator.RecoveryCodes = recoveryCodes.ToArray();
-                            ShowRecoveryCodesModel showRecoveryCodesModel = new ShowRecoveryCodesModel()
-                            {
-                                RecoveryCodes = enableAuthenticator.RecoveryCodes
-                            };
-                            return RedirectToAction(nameof(ShowRecoveryCodes), showRecoveryCodesModel);
-                        }
-                        else
-                        {
-                            return RedirectToAction(nameof(TwoFactorAuthentication));
-                        }
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> ShowRecoveryCodes(string[] recoveryCodes)
-                {
-                    if (recoveryCodes == null)
-                    {
-                        return RedirectToAction(nameof(TwoFactorAuthentication));
-                    }
-
-                    ShowRecoveryCodesModel showRecoveryCodesModel = new ShowRecoveryCodesModel()
-                    {
-                        RecoveryCodes = recoveryCodes
-                    };
-
-                    return View(showRecoveryCodesModel);
-                }
-                public async Task<IActionResult> ResetAuthenticator()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to reset Authenticator";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        await _userManager.SetTwoFactorEnabledAsync(user, false);
-                        await _userManager.ResetAuthenticatorKeyAsync(user);
-                        var userId = await _userManager.GetUserIdAsync(user);
-                        await _signInManager.RefreshSignInAsync(user);
-                        TempData["success"] = "Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.";
-                        return RedirectToAction(nameof(EnableAuthenticator));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> GenerateRecoveryCodes()
-                {
-                    return View();
-                }
-                [HttpPost]
-                public async Task<IActionResult> GenerateRecoveryCodesPost()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to generate Receovery Code";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var isTwoFactorEnabled = await _userManager.GetTwoFactorEnabledAsync(user);
-                        var userId = await _userManager.GetUserIdAsync(user);
-                        if (!isTwoFactorEnabled)
-                        {
-                            TempData["error"] = "Cannot generate recovery codes for user as they do not have 2FA enabled.";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var recoveryCodes = await _userManager.GenerateNewTwoFactorRecoveryCodesAsync(user, 10);
-                        var RecoveryCodesInArray = recoveryCodes.ToArray();
-                        TempData["success"] = "You have generated new recovery codes.";
-                        ShowRecoveryCodesModel showRecoveryCodesModel = new ShowRecoveryCodesModel()
-                        {
-                            RecoveryCodes = RecoveryCodesInArray
-                        };
-                        return RedirectToAction(nameof(ShowRecoveryCodes), new { recoveryCodes = showRecoveryCodesModel.RecoveryCodes });
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> Disable2fa()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to Disable 2FA";
-                            return RedirectToAction(nameof(Profile));
-                        }
-
-                        if (!await _userManager.GetTwoFactorEnabledAsync(user))
-                        {
-                            TempData["error"] = "Cannot disable 2FA for user as it's not currently enabled";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        return View();
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                [HttpPost]
-                public async Task<IActionResult> Disable2faPost()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Error occured! Login again to Disable 2FA";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var disable2faResult = await _userManager.SetTwoFactorEnabledAsync(user, false);
-                        if (!disable2faResult.Succeeded)
-                        {
-                            TempData["error"] = "Error occured! Login again to Disable 2FA";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        TempData["success"] = "2fa has been disabled. You can reenable 2fa when you setup an authenticator app";
-                        return RedirectToAction(nameof(TwoFactorAuthentication));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> LoginWithRecoveryCode()
-                {
-                    try
-                    {
-                        var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-                        if (user == null)
-                        {
-                            TempData["error"] = "Unable to load two-factor authentication user.";
-                            return RedirectToAction(nameof(Login));
-                        }
-                        return View();
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                [HttpPost]
-                public async Task<IActionResult> LoginWithRecoveryCode(LoginWithRecoveryCodeModel loginWithRecoveryCode)
-                {
-                    try
-                    {
-                        if (!ModelState.IsValid)
-                        {
-                            return View();
-                        }
-                        var user = await _signInManager.GetTwoFactorAuthenticationUserAsync();
-                        if (user == null)
-                        {
-                            TempData["error"] = "Unable to load two-factor authentication user.";
-                            return RedirectToAction(nameof(Login));
-                        }
-                        var recoveryCode = loginWithRecoveryCode.RecoveryCode.Replace(" ", string.Empty);
-                        var result = await _signInManager.TwoFactorRecoveryCodeSignInAsync(recoveryCode);
-                        if (result.Succeeded)
-                        {
-                            TempData["success"] = "Login Successful";
-                            return RedirectToAction(nameof(HomeController.Index), "Home", new { area = "Bills" });
-                        }
-                        else
-                        {
-                            ModelState.AddModelError(string.Empty, "Invalid recovery code entered.");
-                        }
-                        return View();
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public async Task<IActionResult> UpdateEmail()
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Unable to load user";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var email = await _userManager.GetEmailAsync(user);
-                        UpdateEmailModel updateEmail = new UpdateEmailModel()
-                        {
-                            Email = email,
-                            IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
-                            Input = new UpdateEmailInputModel
-                            {
-                                NewEmail = email,
-                            }
-                        };
-                        return View(updateEmail);
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                [HttpPost]
-                public async Task<IActionResult> UpdateEmail(UpdateEmailModel updateEmail)
-                {
-                    try
-                    {
-                        var user = await _userManager.GetUserAsync(User);
-                        if (user == null)
-                        {
-                            TempData["error"] = "Unable to load user";
-                            return RedirectToAction("Profile");
-                        }
-                        var email = await _userManager.GetEmailAsync(user);
-                        if (!ModelState.IsValid)
-                        {
-                            UpdateEmailModel updateEmailModel = new UpdateEmailModel()
-                            {
-                                Email = email,
-                                IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user),
-                                Input = new UpdateEmailInputModel
-                                {
-                                    NewEmail = email,
-                                }
-                            };
-                            return View(updateEmailModel);
-                        }
-                        if (updateEmail.Input.NewEmail != email)
-                        {
-                            var userId = await _userManager.GetUserIdAsync(user);
-                            var code = await _userManager.GenerateChangeEmailTokenAsync(user, updateEmail.Input.NewEmail);
-                            var callbackUrl = Url.Action(
-                                                "ConfirmEmailChange",
-                                                "Account",
-                                                new { area = "AccountManager", userId = userId, email = updateEmail.Input.NewEmail, code = code },
-                                                Request.Scheme
-                                                );
-                            await _emailSender.SendEmailAsync(
-                                updateEmail.Input.NewEmail,
-                                "Confirm your email",
-                                $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-                            return RedirectToAction(nameof(UpdateEmailConfirmation));
-                        }
-                        TempData["error"] = "Your email is unchanged.";
-                        return RedirectToAction(nameof(Profile));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                public IActionResult UpdateEmailConfirmation()
-                {
-                    return View();
-                }
-                public async Task<IActionResult> ConfirmEmailChange(string userId, string email, string code)
-                {
-                    try
-                    {
-                        if (userId == null || email == null || code == null)
-                        {
-                            TempData["error"] = "Unable to load user";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var user = await _userManager.FindByIdAsync(userId);
-                        if (user == null)
-                        {
-                            return NotFound($"Unable to load user with ID '{userId}'.");
-                        }
-                        var result = await _userManager.ChangeEmailAsync(user, email, code);
-                        if (!result.Succeeded)
-                        {
-                            TempData["error"] = "Error changing Email";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        var setUserNameResult = await _userManager.SetUserNameAsync(user, email);
-                        if (!setUserNameResult.Succeeded)
-                        {
-                            TempData["error"] = "Error changing Username";
-                            return RedirectToAction(nameof(Profile));
-                        }
-                        await _signInManager.RefreshSignInAsync(user);
-                        TempData["success"] = "Thank you for confirming your email change.";
-                        return RedirectToAction(nameof(Profile));
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                #endregion
-
-                #region Functions
-                private async Task<EnableAuthenticatorModel> LoadSharedKeyAndQrCodeUriAsync(ApplicationUser user)
-                {
-                    try
-                    {
-                        var unformattedKey = await _userManager.GetAuthenticatorKeyAsync(user);
-                        if (string.IsNullOrEmpty(unformattedKey))
-                        {
-                            await _userManager.ResetAuthenticatorKeyAsync(user);
-                            unformattedKey = await _userManager.GetAuthenticatorKeyAsync(user);
-                        }
-                        var email = await _userManager.GetEmailAsync(user);
-                        EnableAuthenticatorModel enableAuthenticator = new EnableAuthenticatorModel()
-                        {
-                            SharedKey = FormatKey(unformattedKey),
-                            AuthenticatorUri = GenerateQrCodeUri(email, unformattedKey)
-                        };
-                        return enableAuthenticator;
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                private string FormatKey(string unformattedKey)
-                {
-                    try
-                    {
-                        var result = new StringBuilder();
-                        int currentPosition = 0;
-                        while (currentPosition + 4 < unformattedKey.Length)
-                        {
-                            result.Append(unformattedKey.AsSpan(currentPosition, 4)).Append(' ');
-                            currentPosition += 4;
-                        }
-                        if (currentPosition < unformattedKey.Length)
-                        {
-                            result.Append(unformattedKey.AsSpan(currentPosition));
-                        }
-
-                        return result.ToString().ToLowerInvariant();
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-
-                private string GenerateQrCodeUri(string email, string unformattedKey)
-                {
-                    try
-                    {
-                        return string.Format(
-                                CultureInfo.InvariantCulture,
-                                AuthenticatorUriFormat,
-                                _urlEncoder.Encode("Microsoft.AspNetCore.Identity.UI"),
-                                _urlEncoder.Encode(email),
-                                unformattedKey);
-                    }
-                    catch
-                    {
-                        throw;
-                    }
-                }
-                #endregion*/
+                
+        */
     }
 }

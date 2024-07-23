@@ -310,3 +310,4 @@ C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\DuendeI
 C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.pdb
 C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\DuendeIdentityServer\obj\Debug\net8.0\DuendeIdentityServer.genruntimeconfig.cache
 C:\Users\Nitro\source\repos\Dueende Identity Server\DuendeIdentityServer\DuendeIdentityServer\obj\Debug\net8.0\ref\DuendeIdentityServer.dll
+C:\Users\sudip.shrestha\source\repos\MicroservicesWithDuendeIS\DuendeIdentityServer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll

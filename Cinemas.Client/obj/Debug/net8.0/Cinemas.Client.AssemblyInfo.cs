@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cinemas.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec6e04c0507d59366366c7832b90c016d736555b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8478bd8445b749501394638b99d145221625c011")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cinemas.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cinemas.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

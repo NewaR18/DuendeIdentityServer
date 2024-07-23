@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using DuendeIdentityServer.Utilities.EmailConfigurations;
 using DuendeIdentityServer.Utilities.BuildModel;
 using DuendeIdentityServer.Models.ViewModels;
+using Duende.IdentityServer;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +49,12 @@ builder.Services.AddIdentityServer()
             sql => sql.MigrationsAssembly(migrationsAssembly));
     })
     .AddAspNetIdentity<ApplicationUser>();
+builder.Services.AddAuthentication().AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    options.Scope.Add("profile");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -61,6 +70,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseIdentityServer();
+app.UseAuthentication();
 app.UseAuthorization();
 app.InitializeDatabase();
 app.MapRazorPages().RequireAuthorization();
